@@ -52,7 +52,7 @@ export default class Upload extends Component {
         }
     }
     uploadImage(image) {
-        return API.post("notes", "/notes", {
+        return API.post("images", "/images", {
             body: image
         });
     }
@@ -69,7 +69,7 @@ export default class Upload extends Component {
                         block
                         bsStyle="primary"
                         bsSize="large"
-                        disabled={!this.validateForm()}
+                        //disabled={!this.validateForm()}
                         type="submit"
                         isLoading={this.state.isLoading}
                         text="Upload"

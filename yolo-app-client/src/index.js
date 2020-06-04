@@ -15,7 +15,7 @@ Amplify.configure({
     identityPoolId: config.cognito.IDENTITY_POOL_ID,
     userPoolWebClientId: config.cognito.APP_CLIENT_ID
     
-  }/*,
+  },
     Storage: {
     region: config.s3.REGION,
     bucket: config.s3.BUCKET,
@@ -24,12 +24,12 @@ Amplify.configure({
   API: {
     endpoints: [
       {
-        name: "yolo",
+        name: "yolo-app-api",
         endpoint: config.apiGateway.URL,
         region: config.apiGateway.REGION
       },
     ]
-  }*/
+  }
 });
 
 ReactDOM.render(
