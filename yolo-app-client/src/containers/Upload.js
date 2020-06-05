@@ -12,12 +12,7 @@ export default class Upload extends Component {
         this.file = null;
         this.state = {
             isLoading: null,
-            content: ""
         };
-    }
-
-    validateForm() {
-        return this.state.content.length > 0;
     }
 
     handleChange = event => {
@@ -52,7 +47,7 @@ export default class Upload extends Component {
         }
     }
     uploadImage(image) {
-        return API.post("images", "/images", {
+        return API.post("yolo-app-api", "/images", {
             body: image
         });
     }

@@ -9,9 +9,9 @@ const dev = {
     },
     cognito: {
         REGION: "us-east-1",
-        USER_POOL_ID: "us-east-1_KMFNwzLjB",
-        APP_CLIENT_ID: "3f1idmfm3kppcjfe2c16io3trh",
-        IDENTITY_POOL_ID: "us-east-1:e9dc4179-d5f0-4bfd-a767-e1db71aa694d"
+        USER_POOL_ID: "us-east-1_tEAAEDUCC",
+        APP_CLIENT_ID: "3jnf0cjp4rb91eioeqqh9totsn",
+        IDENTITY_POOL_ID: "us-east-1:6d86e6bd-82cc-4a78-a261-628f1b73ea08"
     }
 };
 
@@ -26,9 +26,9 @@ const prod = {
     },
     cognito: {
         REGION: "us-east-1",
-        USER_POOL_ID: "us-east-1_KMFNwzLjB",
-        APP_CLIENT_ID: "3f1idmfm3kppcjfe2c16io3trh",
-        IDENTITY_POOL_ID: "us-east-1:e9dc4179-d5f0-4bfd-a767-e1db71aa694d"
+        USER_POOL_ID: "us-east-1_tEAAEDUCC",
+        APP_CLIENT_ID: "3jnf0cjp4rb91eioeqqh9totsn",
+        IDENTITY_POOL_ID: "us-east-1:6d86e6bd-82cc-4a78-a261-628f1b73ea08"
     }
 };
 
