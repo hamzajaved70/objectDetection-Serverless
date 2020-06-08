@@ -37,9 +37,9 @@ export default class Upload extends Component {
             const attachment = this.file
                 ? await s3Upload(this.file)
                 : null;
-            await this.uploadImage({
-                attachment
-            });
+            //await this.uploadImage({
+            //    attachment
+            //});
             this.props.history.push("/");
         } catch (e) {
             alert(e);
