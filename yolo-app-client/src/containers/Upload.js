@@ -46,6 +46,7 @@ export default class Upload extends Component {
             this.setState({ isLoading: false });
         }
     }
+
     uploadImage(image) {
         return API.post("yolo-app-api", "/images", {
             body: image
