@@ -10,6 +10,7 @@ export default class Search extends Component {
         super(props);
         this.state = {
             tags : '',
+            result : []
           };
         }
 
@@ -23,13 +24,38 @@ export default class Search extends Component {
         console.log(this.state);
         axios.post('https://aeamk3bczc.execute-api.us-east-1.amazonaws.com/query/api/fetchimages', this.state)
             .then(response => {
-                console.log(response)
+                  const resultNotFoundMsg = ! response.data.body.links.length
+                                      ? 'There are not mroe serach reasult. please try again with a new search'
+                                      : '';
+                  this.setState( {
+                      result: response.data.body.links
+                  })
+                  console.log(this.state)
             })
             .catch(error => {
                 console.log(error)
             })
 
           }
+    renderSearchResult = () => {
+        const { result } = this.state;
+
+        if (Object.keys ( result ).length && result.length) {
+            return (
+                <div className="result-container">
+                    { result.map( res => {
+                        return (
+                            <a >
+                                {result}
+                            </a>
+
+                        )
+                    }) }
+
+                </div>
+            )
+        }
+    }
 
 
     render() {
@@ -48,7 +74,7 @@ export default class Search extends Component {
                   </div>
                   <button type="submit"> submit </button>
               </form>
-
+              {this.renderSearchResult()}
           </div>
         )
     }
