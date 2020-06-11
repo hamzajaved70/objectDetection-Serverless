@@ -14,13 +14,14 @@ export default class Search extends Component {
         }
 
     changeHandler = (e) => {
-        this.setState({[e.target.name]: e.target.value.split(' ')})
+        this.setState({[e.target.name]: e.target.value.split(",")})
       }
 
-    submitHandler = e => {
+    submitHandler = (e) => {
+
         e.preventDefault()
         console.log(this.state);
-        axios.post('https://aeamk3bczc.execute-api.us-east-1.amazonaws.com/query/api/fetchimages/', this.state)
+        axios.post('https://aeamk3bczc.execute-api.us-east-1.amazonaws.com/query/api/fetchimages', this.state)
             .then(response => {
                 console.log(response)
             })
@@ -46,7 +47,6 @@ export default class Search extends Component {
 
                   </div>
                   <button type="submit"> submit </button>
-
               </form>
 
           </div>
