@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./Search.css";
 import axios from 'axios';
+import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import LoaderButton from "../components/LoaderButton";
+
 
 
 
@@ -62,20 +65,33 @@ export default class Search extends Component {
 
         const { tags } = this.state
         return (
-          <div>
+
+          <div className="Search">
               <form onSubmit= { this.submitHandler }>
+                  <FormGroup controlId="text" bsSize="large">
                   <div>
-                    <input
+                    <FormControl
+                        autoFocus
                         type="text"
                         name="tags"
-                        value={tags}
                         onChange= { this.changeHandler }/>
-
                   </div>
-                  <button type="submit"> submit </button>
+                  </FormGroup>
+                  <FormGroup controlId="submit" bsSize="large">
+                    <LoaderButton
+                        block
+                        bsSize="large"
+                        type="submit"
+                        text="Search"
+                    />
+                  </FormGroup>
               </form>
+              <FormGroup controlId="result" bsSize="large">
               {this.renderSearchResult()}
+              </FormGroup>
           </div>
+
+
         )
     }
 }
