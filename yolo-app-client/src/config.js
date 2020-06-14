@@ -12,6 +12,9 @@ const dev = {
         USER_POOL_ID: "us-east-1_tEAAEDUCC",
         APP_CLIENT_ID: "3jnf0cjp4rb91eioeqqh9totsn",
         IDENTITY_POOL_ID: "us-east-1:6d86e6bd-82cc-4a78-a261-628f1b73ea08"
+    },
+    social: {
+      FB: "299751737822504"
     }
 };
 
@@ -29,6 +32,9 @@ const prod = {
         USER_POOL_ID: "us-east-1_tEAAEDUCC",
         APP_CLIENT_ID: "3jnf0cjp4rb91eioeqqh9totsn",
         IDENTITY_POOL_ID: "us-east-1:6d86e6bd-82cc-4a78-a261-628f1b73ea08"
+    },
+    social: {
+      FB: "299751737822504"
     }
 };
 

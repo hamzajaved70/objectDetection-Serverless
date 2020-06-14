@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { HelpBlock, FormGroup, FormControl, ControlLabel} from "react-bootstrap";
+import { HelpBlock, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton";
 import "./Signup.css";
 import { Auth } from "aws-amplify";
+import FacebookButton from "../components/FacebookButton";
 
 export default class Signup extends Component {
     constructor(props) {
@@ -33,6 +34,10 @@ export default class Signup extends Component {
             [event.target.id]: event.target.value
         });
     }
+
+    handleFbLogin = () => {
+        this.props.userHasAuthenticated(true);
+    };
 
     handleSubmit = async event => {
         event.preventDefault();
@@ -127,7 +132,12 @@ export default class Signup extends Component {
                     text="Signup"
                     loadingText="Signing up..."
                 />
+                <FacebookButton
+                    onLogin={this.handleFbLogin}
+                />
+                <hr />
             </form>
+
         );
     }
     render() {

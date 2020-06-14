@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton";
+import FacebookButton from "../components/FacebookButton";
 import "./Login.css";
 import { Auth } from "aws-amplify";
 
@@ -24,6 +25,10 @@ export default class Login extends Component {
             [event.target.id]: event.target.value
         });
     }
+
+    handleFbLogin = () => {
+        this.props.userHasAuthenticated(true);
+    };
 
     handleSubmit = async event => {
         event.preventDefault();
@@ -66,7 +71,12 @@ export default class Login extends Component {
                         text="Login"
                         loadingText="Logging in..."
                     />
+                    <FacebookButton
+                        onLogin={this.handleFbLogin}
+                    />
+                    <hr />
                 </form>
+
             </div>
         );
     }
