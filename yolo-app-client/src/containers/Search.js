@@ -18,7 +18,7 @@ export default class Search extends Component {
         }
 
     changeHandler = (e) => {
-        this.setState({[e.target.name]: e.target.value.split(",")})
+        this.setState({[e.target.name]: e.target.value.split(" ")})
       }
 
     submitHandler = (e) => {
@@ -40,26 +40,15 @@ export default class Search extends Component {
             })
 
           }
-    renderSearchResult = () => {
-        const { result } = this.state;
+      renderSearchResult = () => {
+          const { result } = this.state;
 
-        if (Object.keys ( result ).length && result.length) {
-            return (
-                <div className="result-container">
-                    { result.map( res => {
-                        return (
-                            <a >
-                                {result}
-                            </a>
-
-                        )
-                    }) }
-
-                </div>
-            )
-        }
-    }
-
+          return (
+             <div>
+                 {result.map(station => <div><a key={station} href={station}> {station} </a></div>)}
+             </div>
+                );
+          }
 
     render() {
 
