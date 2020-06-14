@@ -56,6 +56,8 @@ export default class Upload extends Component {
     render() {
         return (
             <div className="Upload">
+                <h1>Image Upload</h1>
+                <p>Please upload your image:</p>
                 <form onSubmit={this.handleSubmit}>
                     <FormGroup controlId="file">
                         <ControlLabel>Image</ControlLabel>

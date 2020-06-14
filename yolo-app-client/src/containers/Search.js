@@ -67,9 +67,12 @@ export default class Search extends Component {
         return (
 
           <div className="Search">
+              <h1>Find Query</h1>
+              <p>Please enter your query:</p>
               <form onSubmit= { this.submitHandler }>
                   <FormGroup controlId="text" bsSize="large">
                   <div>
+                  <ControlLabel>Query</ControlLabel>
                     <FormControl
                         autoFocus
                         type="text"
